@@ -1,94 +1,110 @@
-# 📰 BERT News Topic Classification
+# 📰 News Topic Classification using BERT
 
 ## 📌 Project Overview
-This project is part of the **AI/ML Engineering Internship (Task 1)** by DevelopersHub Corporation.
 
-The goal is to build a **News Topic Classification system** using a fine-tuned **BERT (bert-base-uncased)** model. The model classifies news articles into four categories:
+This project is part of the **DevelopersHub Corporation AI/ML Engineering Internship (Advanced Task 1)**.
 
-- World
-- Sports
-- Business
-- Sci/Tech
+The goal is to build a **news topic classification system** using a fine-tuned **BERT (bert-base-uncased)** transformer model. The model classifies news articles into four categories:
+
+- 🌍 World  
+- 🏅 Sports  
+- 💼 Business  
+- 🔬 Sci/Tech  
+
+The project demonstrates the use of **Transfer Learning with Transformers** for real-world NLP classification tasks.
 
 ---
 
 ## 🎯 Objective
-To fine-tune a Transformer-based model (BERT) for multiclass text classification and evaluate its performance using standard NLP metrics.
+
+- Fine-tune a pre-trained BERT model on the AG News dataset  
+- Classify news articles into 4 categories  
+- Evaluate model performance using accuracy and F1-score  
+- Generate predictions for unseen test data  
+- Visualize performance using confusion matrix  
 
 ---
 
-## 📊 Dataset
-**AG News Dataset**
+## 📊 Dataset Information
 
-- 120,000 training samples
-- 7,600 testing samples
+**Dataset:** AG News Classification Dataset  
+
+- 120,000 training samples  
+- 7,600 test samples  
 - 4 classes:
-  - World
-  - Sports
-  - Business
-  - Sci/Tech
+  - 1 → World
+  - 2 → Sports
+  - 3 → Business
+  - 4 → Sci/Tech  
 
 Each sample contains:
 - Title
 - Description
-- Label (1–4)
+- Label
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python
-- Hugging Face Transformers
-- PyTorch
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+- Python 🐍  
+- Hugging Face Transformers 🤗  
+- PyTorch 🔥  
+- Scikit-learn 📊  
+- Pandas & NumPy  
+- Matplotlib & Seaborn  
 
 ---
 
 ## 🧠 Model Details
 
 - Model: `bert-base-uncased`
-- Fine-tuning approach: Transfer Learning
-- Max Sequence Length: 128
-- Loss Function: Cross-Entropy
+- Task: Text Classification
+- Approach: Fine-tuning (Transfer Learning)
+- Max Sequence Length: 128 tokens
+- Loss Function: Cross-Entropy Loss
 - Optimizer: AdamW
+- Framework: Hugging Face Trainer API
 
 ---
 
-## ⚙️ Workflow
+## ⚙️ Project Workflow
 
-### 1. Data Preprocessing
-- Loaded CSV dataset
-- Cleaned labels
-- Combined title + description
+### 1️⃣ Data Preprocessing
+- Loaded AG News dataset (CSV format)
+- Cleaned labels and removed invalid rows
+- Combined title and description into a single text field
 
-### 2. Tokenization
+### 2️⃣ Tokenization
 - Used BERT tokenizer
 - Applied truncation and padding
+- Converted text into input IDs and attention masks
 
-### 3. Model Training
-- Fine-tuned BERT for 1–2 epochs
+### 3️⃣ Model Training
+- Fine-tuned BERT on training dataset
 - Used Hugging Face Trainer API
+- Evaluated using validation dataset
 
-### 4. Evaluation
-- Accuracy
-- F1 Score
+### 4️⃣ Evaluation
+- Accuracy Score
+- F1 Score (Weighted)
 - Confusion Matrix
 
 ---
 
 ## 📈 Results
 
-- Accuracy: ~90%+ (depends on training setup)
-- F1 Score: High performance across all classes
+The fine-tuned model achieved strong performance on the AG News dataset:
+
+- ✅ Accuracy: ~90%+ (varies based on training setup)
+- ✅ F1 Score: High weighted performance across all classes
 
 ---
 
 ## 📊 Confusion Matrix
-(See notebook for visualization)
+
+The confusion matrix shows strong classification performance across all four categories, with minor misclassifications between similar topics.
+
+*(See notebook for visualization)*
 
 ---
 
